@@ -1,7 +1,8 @@
 public class Main {
     public static void main(String[] args) {
 
-//        Task1.inputData();
+        Task1.inputData();
         Task2.examGrade();
+        Task3.investment();
     }
 }
