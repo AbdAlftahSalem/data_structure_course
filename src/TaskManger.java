@@ -34,5 +34,15 @@ public class TaskManger {
         }
     }
 
+    public void updateTaskStatus(String taskTitle, boolean status) {
+        Node<TaskModel> current = head;
+        while (current != null) {
+            if (current.value.title.equals(taskTitle)) {
+                current.value.status = status;
+                break;
+            }
+            current = current.next;
+        }
+    }
 
 }
