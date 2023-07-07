@@ -45,4 +45,17 @@ public class TaskManger {
         }
     }
 
+    public void modifyTask(String taskTitle, String newTitle, String newDate, int newLevel) {
+        Node<TaskModel> current = head;
+        while (current != null) {
+            if (current.value.title.equals(taskTitle)) {
+                current.value.title = newTitle;
+                current.value.date = newDate;
+                current.value.level = newLevel;
+                break;
+            }
+            current = current.next;
+        }
+    }
+
 }
