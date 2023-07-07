@@ -1,20 +1,17 @@
 public class Main {
     public static void main(String[] args) {
 
-        EbookReader reader = new EbookReader();
+        TaskManger taskManager = new TaskManger();
 
-        Ebook book1 = new Ebook("First book", "Abd Alftah");
-        Ebook book2 = new Ebook("Second book", "Ahmed");
-        Ebook book3 = new Ebook("Third book", "Ali");
+        TaskModel task1 = new TaskModel("Task 1", "2023-07-07", 1, false);
+        TaskModel task2 = new TaskModel("Task 2", "2023-07-08", 2, true);
+        TaskModel task3 = new TaskModel("Task 3", "2023-07-09", 3, true);
 
-        reader.buyBook(book1);
-        reader.buyBook(book2);
+        taskManager.addTask(task1);
+        taskManager.addTask(task2);
 
-        reader.viewPurchasedBooks();
+        taskManager.printTasks();
 
-        reader.readBook(book1);
-        reader.readBook(book2);
-        reader.readBook(book3);
 
     }
 }
