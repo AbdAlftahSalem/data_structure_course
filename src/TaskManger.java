@@ -91,5 +91,37 @@ public class TaskManger {
         }
     }
 
+    public void sortByDueDate() {
+        if (head == null || head.next == null) {
+            return;
+        }
+
+        boolean swapped;
+        do {
+            swapped = false;
+            Node<TaskModel> current = head;
+            Node<TaskModel> previous = null;
+            while (current != null && current.next != null) {
+                if (current.value.date.compareTo(current.next.value.date) > 0) {
+                    if (previous != null) {
+                        previous.next = current.next;
+                    } else {
+                        head = current.next;
+                    }
+                    Node<TaskModel> nextNode = current.next.next;
+                    current.next.next = current;
+                    current.next = nextNode;
+                    swapped = true;
+                }
+                previous = current;
+                current = current.next;
+            }
+            if (!swapped) {
+                break;
+            }
+            tail = current;
+        } while (swapped);
+    }
+
 
 }

@@ -27,6 +27,9 @@ public class Main {
         // Delete a task
         taskManager.deleteTask("Buy groceries");
 
+        // Sort tasks by due date
+        taskManager.sortByDueDate();
+
         // Print tasks after modifications
         System.out.println("Modified Task List:");
         taskManager.printTasks();
