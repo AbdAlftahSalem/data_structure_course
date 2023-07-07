@@ -58,4 +58,38 @@ public class TaskManger {
         }
     }
 
+    public void deleteTask(String taskTitle) {
+        if (head == null) {
+            return;
+        }
+
+        if (head.value.title.equals(taskTitle)) {
+            head = head.next;
+            if (head == null) {
+                tail = null;
+            }
+            count--;
+            return;
+        }
+
+        Node<TaskModel> current = head;
+        Node<TaskModel> previous = null;
+        while (current != null) {
+            if (current.value.title.equals(taskTitle)) {
+                if (previous != null) {
+                    previous.next = current.next;
+                }
+                if (current == tail) {
+                    tail = previous;
+                }
+                count--;
+
+                return;
+            }
+            previous = current;
+            current = current.next;
+        }
+    }
+
+
 }
